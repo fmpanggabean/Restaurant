@@ -16,6 +16,9 @@ public class Main {
 		Visitor visitor1 = new Visitor("Ebednezer");
 		Visitor visitor2 = new Visitor("Granite");
 		
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
+		
 		Menu mainCourse = new Menu("Main Course");
 		
 		mainCourse.add(new Food("Nasi Bakar", 30000));
@@ -27,7 +30,7 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
