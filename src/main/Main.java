@@ -2,8 +2,13 @@ package main;
 
 import restaurant.Restaurant;
 import restaurant.Menu;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import people.Chef;
 import people.Visitor;
+import restaurant.Food;
 
 public class Main {
 
@@ -16,6 +21,9 @@ public class Main {
 		Visitor visitor1 = new Visitor("Ebednezer");
 		Visitor visitor2 = new Visitor("Granite");
 		
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
+		
 		Menu mainCourse = new Menu("Main Course");
 		
 		mainCourse.add(new Food("Nasi Bakar", 30000));
@@ -27,7 +35,7 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
@@ -44,10 +52,16 @@ public class Main {
 		
 		visitor1.showTotalPrice();
 		visitor2.showTotalPrice();
+		System.out.println();
 		
 		chef1.showCookHistory();
 		chef2.showCookHistory();
 		
 		restaurant.showTotalIncome();
 	}
+	
+	public static String formatIDR(int amount) { 
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID")); 
+        return formatter.format(amount); 
+    } 
 }
