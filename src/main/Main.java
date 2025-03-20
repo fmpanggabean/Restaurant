@@ -1,9 +1,11 @@
 package main;
 
-import restaurant.Restaurant;
-import restaurant.Menu;
-import people.Chef;
-import people.Visitor;
+import restaurant.*;
+// import restaurant.Restaurant;
+// import restaurant.Menu;
+import people.*;
+// import people.Chef;
+// import people.Visitor;
 
 public class Main {
 
@@ -13,23 +15,26 @@ public class Main {
 		Chef chef1 = new Chef("Bintang");
 		Chef chef2 = new Chef("Sawitri");
 		
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
+
 		Visitor visitor1 = new Visitor("Ebednezer");
 		Visitor visitor2 = new Visitor("Granite");
 		
 		Menu mainCourse = new Menu("Main Course");
 		
-		mainCourse.add(new Food("Nasi Bakar", 30000));
-		mainCourse.add(new Food("Nasi Goreng", 230000));
-		mainCourse.add(new Food("Mie Goreng", 20000));
-		mainCourse.add(new Food("Udang Emas", 999000));
+		mainCourse.addItems(new Food("Nasi Bakar", 30000));
+		mainCourse.addItems(new Food("Nasi Goreng", 230000));
+		mainCourse.addItems(new Food("Mie Goreng", 20000));
+		mainCourse.addItems(new Food("Udang Emas", 999000));
 		
 		restaurant.addMenu(mainCourse);
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
-		dessert.add(new Food("Es Pisang Ijo", 23000));
-		dessert.add(new Food("Jus Emas", 999000));
+		dessert.addItems(new Food("Ice Cream", 1000));
+		dessert.addItems(new Food("Es Pisang Ijo", 23000));
+		dessert.addItems(new Food("Jus Emas", 999000));
 		
 		restaurant.addMenu(dessert);
 		
