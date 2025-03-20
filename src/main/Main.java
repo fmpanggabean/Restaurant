@@ -1,7 +1,7 @@
 package main;
-
 import restaurant.Restaurant;
 import restaurant.Menu;
+import restaurant.Food;
 import people.Chef;
 import people.Visitor;
 
@@ -27,7 +27,7 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
