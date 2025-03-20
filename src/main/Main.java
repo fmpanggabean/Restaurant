@@ -1,3 +1,4 @@
+
 package main;
 
 import restaurant.Restaurant;
@@ -13,6 +14,9 @@ public class Main {
 		
 		Chef chef1 = new Chef("Bintang");
 		Chef chef2 = new Chef("Sawitri");
+		
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
 		
 		Visitor visitor1 = new Visitor("Ebednezer");
 		Visitor visitor2 = new Visitor("Granite");
