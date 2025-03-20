@@ -1,6 +1,7 @@
 package main;
 
 import restaurant.Restaurant;
+import restaurant.Food;
 import restaurant.Menu;
 import people.Chef;
 import people.Visitor;
@@ -27,11 +28,13 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
 		restaurant.addMenu(dessert);
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
 		
 		restaurant.showMenu();
 		restaurant.showChef();
@@ -44,10 +47,10 @@ public class Main {
 		
 		visitor1.showTotalPrice();
 		visitor2.showTotalPrice();
-		
+//		
 		chef1.showCookHistory();
 		chef2.showCookHistory();
-		
+//		
 		restaurant.showTotalIncome();
 	}
 }
