@@ -41,6 +41,8 @@ public class Restaurant {
 	}
 
 	public void showMenu() {
+		System.out.println("Restourant: " + name);
+		System.out.println();
 		System.out.println("Menus:");
 		for (Menu menu : menus) {
 			System.out.println("- " + menu.getName());
@@ -95,7 +97,7 @@ public class Restaurant {
 
 	public void showTotalIncome() {
 		System.out.println();
-		System.out.println("Total Income: " + formatIDR(income));
+		System.out.println(name +", Total Income: " + formatIDR(income));
 	} 
 	
 }
