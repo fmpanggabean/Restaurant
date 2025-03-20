@@ -23,11 +23,13 @@ public class Main {
 		mainCourse.add(new Food("Mie Goreng", 20000));
 		mainCourse.add(new Food("Udang Emas", 999000));
 		
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
 		restaurant.addMenu(mainCourse);
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
