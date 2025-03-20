@@ -24,10 +24,12 @@ public class Main {
 		mainCourse.add(new Food("Udang Emas", 999000));
 		
 		restaurant.addMenu(mainCourse);
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
