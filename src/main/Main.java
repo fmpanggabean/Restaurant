@@ -3,6 +3,10 @@ package main;
 import restaurant.Restaurant;
 import restaurant.Food;
 import restaurant.Menu;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import people.Chef;
 import people.Visitor;
 
@@ -54,4 +58,9 @@ public class Main {
 		
 		restaurant.showTotalIncome();
 	}
+	
+	 public static String formatIDR(int amount) { 
+	        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID")); 
+	        return formatter.format(amount); 
+	    } 
 }

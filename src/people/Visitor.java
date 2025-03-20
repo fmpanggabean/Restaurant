@@ -1,7 +1,6 @@
 package people;
 
-import java.text.NumberFormat;
-import java.util.Locale;
+import main.Main;
 
 public class Visitor {
 	private String name;
@@ -9,11 +8,6 @@ public class Visitor {
 
 	public Visitor(String name) {
 		this.name = name;
-	}
-
-	public String formatIDR(int amount) {
-		NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
-		return formatter.format(amount);
 	}
 	
 	public String getName() {
@@ -41,7 +35,7 @@ public class Visitor {
 	{
 		System.out.println("-- Visitor --");
 		System.out.printf("- Name : %s\n", this.name);
-		System.out.printf("- Total Price : %s\n", formatIDR(this.totalPrice));
+		System.out.printf("- Total Price : %s\n", Main.formatIDR(this.totalPrice));
 		System.out.println();
 	}
 }
