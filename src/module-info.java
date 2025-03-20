@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Bakery {
+module restaurant_Samudra {
 }
