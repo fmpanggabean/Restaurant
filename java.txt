@@ -1,0 +1,128 @@
+package restaurant;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Menu {
+    String category;
+    List<String> foodNames = new ArrayList<>();
+    List<Integer> foodPrices = new ArrayList<>();
+
+    public Menu(String category) {
+        this.category = category;
+    }
+
+    public void add(String name, int price) {
+        foodNames.add(name);
+        foodPrices.add(price);
+    }
+
+    public void showMenu() {
+        System.out.println("- " + category);
+        for (int i = 0; i < foodNames.size(); i++) {
+            System.out.println("  - " + foodNames.get(i) + " (Price: Rp" + String.format("%,d", foodPrices.get(i)).replace(',', '.') + ",00)");
+        }
+    }
+}
+
+class Chef {
+    String name;
+    List<String> cookHistory = new ArrayList<>();
+
+    public Chef(String name) {
+        this.name = name;
+    }
+
+    public void cook(String foodName, int quantity) {
+        cookHistory.add(foodName + " x" + quantity);
+    }
+
+    public void showCookHistory() {
+        System.out.println("- " + name + " cooked:");
+        for (String record : cookHistory) {
+            System.out.println("  - " + record);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "- " + name;
+    }
+}
+
+class Visitor {
+    String name;
+    int totalSpent = 0;
+    List<String> orders = new ArrayList<>();
+
+    public Visitor(String name) {
+        this.name = name;
+    }
+
+    public void order(String foodName, int quantity, int price) {
+        int totalPrice = quantity * price;
+        totalSpent += totalPrice;
+        orders.add(foodName + " x" + quantity + " (Total: Rp" + String.format("%,d", totalPrice).replace(',', '.') + ",00)");
+    }
+
+    public void showTotalPrice() {
+        System.out.println("- " + name + " ordered:");
+        for (String order : orders) {
+            System.out.println("  - " + order);
+        }
+        System.out.println("  Total Spent: Rp" + String.format("%,d", totalSpent).replace(',', '.') + ",00\n");
+    }
+}
+
+public class Restaurant {
+    String name;
+    List<Chef> chefs = new ArrayList<>();
+    List<Menu> menus = new ArrayList<>();
+    int totalIncome = 0;
+
+    public Restaurant(String name) {
+        this.name = name;
+    }
+
+    public void add(Chef chef) {
+        chefs.add(chef);
+    }
+
+    public void addMenu(Menu menu) {
+        menus.add(menu);
+    }
+
+    public void showMenu() {
+        System.out.println("Restaurant: " + name);
+        System.out.println("Menus:");
+        for (Menu menu : menus) {
+            menu.showMenu();
+        }
+        System.out.println();
+    }
+
+    public void showChef() {
+        System.out.println("Chefs:");
+        for (Chef chef : chefs) {
+            System.out.println(chef);
+        }
+        System.out.println();
+    }
+
+    public void order(Chef chef, Visitor visitor, String foodName, int quantity) {
+        for (Menu menu : menus) {
+            for (int i = 0; i < menu.foodNames.size(); i++) {
+                if (menu.foodNames.get(i).equals(foodName)) {
+                    visitor.order(foodName, quantity, menu.foodPrices.get(i));
+                    chef.cook(foodName, quantity);
+                    totalIncome += menu.foodPrices.get(i) * quantity;
+                    return;
+                }
+            }
+        }
+    }
+
+    public void showTotalIncome() {
+        System.out.println("Total Restaurant Income: Rp" + String.format("%,d", totalIncome).replace(',', '.') + ",00");
+    }
+}

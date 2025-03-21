@@ -4,14 +4,19 @@ import restaurant.Restaurant;
 import restaurant.Menu;
 import people.Chef;
 import people.Visitor;
+import restaurant.Food;
 
 public class Main {
 
 	public static void main(String[] args) {	
+		// Create a new Restaurant
 		Restaurant restaurant = new Restaurant("Rumah Sambal");
 		
 		Chef chef1 = new Chef("Bintang");
 		Chef chef2 = new Chef("Sawitri");
+
+		restaurant.add(chef1);
+		restaurant.add(chef2);
 		
 		Visitor visitor1 = new Visitor("Ebednezer");
 		Visitor visitor2 = new Visitor("Granite");
@@ -27,7 +32,7 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
