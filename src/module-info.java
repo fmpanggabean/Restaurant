@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Bakery {
+module Case04_Restaurant {
 }
