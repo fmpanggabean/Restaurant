@@ -4,6 +4,9 @@ import restaurant.Restaurant;
 import restaurant.Menu;
 import people.Chef;
 import people.Visitor;
+import restaurant.*; // Buat import package restaurant, biar ga cuman restaurant dan menu tapi bisa nambah food
+import java.text.NumberFormat;
+import java.util.*;
 
 public class Main {
 
@@ -27,7 +30,7 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000)); // Ada typo di tanda kurung tutup
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
@@ -50,4 +53,11 @@ public class Main {
 		
 		restaurant.showTotalIncome();
 	}
+
+	// Helper method to format currency in IDR 
+
+    public static String formatIDR(int amount) { 
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID")); 
+        return formatter.format(amount); 
+    } 
 }
