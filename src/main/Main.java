@@ -13,6 +13,9 @@ public class Main {
 		Chef chef1 = new Chef("Bintang");
 		Chef chef2 = new Chef("Sawitri");
 		
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
+		
 		Visitor visitor1 = new Visitor("Ebednezer");
 		Visitor visitor2 = new Visitor("Granite");
 		
@@ -27,7 +30,7 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
@@ -44,10 +47,14 @@ public class Main {
 		
 		visitor1.showTotalPrice();
 		visitor2.showTotalPrice();
+		System.out.println("=============================================================");
 		
 		chef1.showCookHistory();
+		System.out.println(" ");
 		chef2.showCookHistory();
+		System.out.println("=============================================================");
 		
 		restaurant.showTotalIncome();
+		System.out.println("=============================================================");
 	}
 }
