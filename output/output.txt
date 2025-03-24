@@ -1,0 +1,33 @@
+Restaurant : Rumah Sambal
+
+Menus : 
+  Main Course
+    - Nasi Bakar (Price : Rp30.000,00)
+    - Nasi Goreng (Price : Rp230.000,00)
+    - Mie Goreng (Price : Rp20.000,00)
+    - Udang Emas (Price : Rp999.000,00)
+  Dessert
+    - Ice Cream (Price : Rp1.000,00)
+    - Es Pisang Ijo (Price : Rp23.000,00)
+    - Jus Emas (Price : Rp999.000,00)
+
+Chefs : 
+  - Chef Bintang
+  - Chef Sawitri
+
+Ebednezer is ordering Chef Bintang's Nasi Bakar for 2 portion(s)
+Ebednezer is ordering Chef Bintang's Jus Emas for 2 portion(s)
+Granite is ordering Chef Sawitri's Udang Emas for 9 portion(s)
+Granite is ordering Chef Sawitri's Ice Cream for 90 portion(s)
+  - Ebednezer's bill : Rp2.058.000,00
+  - Granite's bill : Rp9.081.000,00
+
+Bintang's Cook History :
+  - 2 portion(s) of Nasi Bakar
+  - 2 portion(s) of Jus Emas
+
+Sawitri's Cook History :
+  - 9 portion(s) of Udang Emas
+  - 90 portion(s) of Ice Cream
+
+Total Restaurant Income : Rp11.139.000,00
